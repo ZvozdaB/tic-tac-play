@@ -1,19 +1,6 @@
 import React from "react";
-const flex = {
-    display: "flex"
-}
-const none = {
-    display: "none"
-}
+
 export default function WinScrin(props){
-    function style(props){
-        if (props.Game){
-            return none
-        }
-        else {
-            return flex
-        }
-    }
     function win(win){
         if (win==="cros"){
             return "crosses won" 
@@ -26,7 +13,7 @@ export default function WinScrin(props){
 
     }
     return(
-        <div className="win" style={style(props)}>
+        <div className="win" style={(props.Game) ? { display: "none" } : { display: "flex" }}>
             <p className="win__player"> {win(props.win)}</p>
             <div className="win__btn">
                 <div className="win__new-game" onClick={() => { props.newGame()}}><p>Next Game</p></div>

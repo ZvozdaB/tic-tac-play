@@ -1,6 +1,7 @@
 import React from "react";
 import Cros from "./Cros";
 import Zero from "./Zero";
+
 function add(props) {
     if (props.item.cros) {
         return <Cros  />       
@@ -8,6 +9,7 @@ function add(props) {
         return <Zero />       
     }
 }
+
 function crossOut(props){
     if (props.item.crossOut === "hor"){
         return <div className="cross-out"/>

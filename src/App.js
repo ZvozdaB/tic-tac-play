@@ -44,7 +44,7 @@ function App() {
       })
     )
   }
-  function check() {
+  function checkIfWon() {
     const winCombHor = [
       [0, 1, 2],
       [3, 4, 5],
@@ -162,12 +162,12 @@ function App() {
   }
   return (
     <div className="wrapper">
+      {checkIfWon()}
       <Victories winCros={winCros} winZero={winZero} draw={draw}/>
       <div className="field" >
         {item.map((item, index)=>{
           return <FildCell className="field__cell" key={index} item={item} addPoint={addPoint} />
         })}
-        {check()}
       </div>
       <WinScrin Game={Game} newGame={newGame} win={win} newSession={newSession}/>
       <div className="player ">Move the player: <span style={{textTransform: "uppercase"}}> {(counter % 2 === 0) ? "cros" : "zero"} </span> </div>
